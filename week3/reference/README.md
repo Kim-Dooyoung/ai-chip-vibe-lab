@@ -1,12 +1,17 @@
 # week3/reference — 강사 참조 솔루션
 
-| 파일 | 회차 | 외부 의존 |
+| 파일 / 폴더 | 회차 | 외부 의존 |
 | --- | --- | --- |
 | `01_npu_config.py` | [3-1](../sessions/3-1.md) | (stdlib only) |
-| `02_mac_and_memory.py` | [3-2](../sessions/3-2.md) | numpy |
+| `02_mac_and_memory.py` | [3-2](../sessions/3-2.md) — Python MAC | numpy |
+| `02_mac_verilog/` | [3-2](../sessions/3-2.md) — Verilog MAC + cocotb | numpy, cocotb, icarus |
 | `03_npu_simulator.py` | [3-3](../sessions/3-3.md) | numpy |
 | `04_npu_perf.py` | [3-4](../sessions/3-4.md) | numpy, matplotlib |
+| `04_cycle_compare/` | [3-4](../sessions/3-4.md) — RTL ↔ Python cycle | cocotb, icarus |
 | `05_npu_optimize.py` | [3-5](../sessions/3-5.md) | numpy |
+| **`advanced_mac/`** ⭐ | **추가 자료** — production-leaning MAC | cocotb, icarus |
+
+> ⭐ **`advanced_mac/`** 은 *선택 학습 자료*. `02_mac_verilog/` 의 기본 MAC 대비 *8가지 production 디테일* 을 추가한 강화판 (parameterize, enable, pipeline, saturation, valid 신호 등). Week 3-2 진행에 *필수 아님* — RTL 깊이 들어가고 싶은 학생용.
 
 ## 실행 순서
 
