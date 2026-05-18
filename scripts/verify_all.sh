@@ -86,6 +86,7 @@ if [[ "$FILTER" == "all" || "$FILTER" == "week3" ]]; then
     echo "=== Week 3 (Verilog/cocotb) ==="
     run_make   "3-2 mac.v cocotb tests" "week3/reference/02_mac_verilog"
     run_make   "3-4 cycle_compare"      "week3/reference/04_cycle_compare"
+    run_make   "advanced_mac (mac_v2)"  "week3/reference/advanced_mac"
 fi
 
 if [[ "$FILTER" == "all" || "$FILTER" == "week4" ]]; then
