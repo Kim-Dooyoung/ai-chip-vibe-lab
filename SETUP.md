@@ -102,24 +102,48 @@ sudo apt install iverilog
 iverilog -V    # 11.0 이상 권장
 ```
 
-### 6.2 Waveform 뷰어 — Surfer (M4 Apple Silicon native)
+### 6.2 Waveform 뷰어 — Surfer
+
+Rust 기반 cross-platform waveform 뷰어. Windows / macOS / Linux + 웹 버전 지원.
 
 ```bash
-# macOS (권장 — Apple Silicon native arm64)
+# === macOS (Apple Silicon native arm64) ===
 brew install surfer
 
-# Ubuntu/WSL
-brew install surfer    # 또는 cargo install --locked surfer
+# === Linux / WSL — 옵션 A: 사전 빌드 바이너리 (가장 쉬움) ===
+# https://gitlab.com/surfer-project/surfer/-/releases 에서
+# surfer-linux-x86_64.tar.gz 다운로드 → 압축 풀고 PATH 에 추가
+# 예:
+#   wget https://gitlab.com/surfer-project/surfer/-/releases/.../surfer-linux-x86_64.tar.gz
+#   tar -xzf surfer-linux-x86_64.tar.gz
+#   sudo mv surfer /usr/local/bin/
+
+# === Linux / WSL — 옵션 B: cargo (Rust 필요) ===
+# Rust 가 없으면 https://rustup.rs 에서 설치
+cargo install --locked surfer
+
+# === Windows — 옵션 1: 사전 빌드 .exe ===
+# https://gitlab.com/surfer-project/surfer/-/releases 에서 surfer-windows-x86_64.zip
+# 압축 풀고 surfer.exe 를 PATH 에 추가 (예: C:\Tools\surfer\)
+
+# === Windows — 옵션 2: cargo ===
+cargo install --locked surfer
+
+# === Windows — 옵션 3: WSL2 + Ubuntu ===
+# WSL 내부에서 Linux 옵션 A 또는 B (Windows 11 의 WSLg 가 GUI 자동 처리)
+
+# === 모든 플랫폼 — 옵션 4: 웹 버전 (설치 불필요) ⭐ ===
+# https://app.surfer-project.org/ 접속, dump.vcd 드래그
 ```
 
-설치 확인:
+설치 확인 (CLI 설치한 경우):
 ```bash
 surfer --version       # 0.7.0 이상
 ```
 
-> **왜 Surfer?** GTKWave 는 macOS Apple Silicon (M3/M4) 에서 quarantine + sandboxing 이슈로 안정적이지 않습니다. **Surfer 는 Rust 기반 modern waveform viewer** 로 arm64 native 바이너리, brew 1줄 설치, 더 깔끔한 UI. VCD/FST/GHW 모두 지원.
+> **왜 Surfer?** GTKWave 는 macOS Apple Silicon (M3/M4) 에서 quarantine + sandboxing 이슈로 안정적이지 않고, Windows native 빌드도 부재 / 까다로움. **Surfer 는 Rust 기반 modern waveform viewer** — 모든 OS native 빌드 + 웹 버전. 더 깔끔한 UI. VCD/FST/GHW 지원.
 >
-> Linux/WSL 학생은 GTKWave 도 OK (`sudo apt install gtkwave`), 단 통일성을 위해 Surfer 권장.
+> Windows 학생이 *설치 권한 없거나 귀찮으면* 옵션 4 (웹) 가 가장 쉬움. UI, 기능 동일.
 
 ### 6.3 cocotb (Python testbench, §3 에서 이미 설치)
 
