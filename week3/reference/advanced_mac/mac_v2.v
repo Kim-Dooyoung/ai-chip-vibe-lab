@@ -82,4 +82,11 @@ module mac_v2 #(
         end
     end
 
+`ifndef SYNTHESIS
+    initial begin
+        $dumpfile("dump.vcd");
+        $dumpvars(0, mac_v2);
+    end
+`endif
+
 endmodule
