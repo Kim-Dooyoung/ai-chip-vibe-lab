@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1779704205" />
+    <testcase name="test_identity_passthrough" classname="test_systolic_top" file="/Users/eddi/Documents/GitHub/lecture/ai-chip-vibe-lab/week4/reference/systolic_array/test_systolic_top.py" lineno="88" time="0.001931905746459961" sim_time_ns="195.0" ratio_time="100936.60125879305" />
+    <testcase name="test_random_4x4" classname="test_systolic_top" file="/Users/eddi/Documents/GitHub/lecture/ai-chip-vibe-lab/week4/reference/systolic_array/test_systolic_top.py" lineno="110" time="0.010269880294799805" sim_time_ns="224.99999999999997" ratio_time="21908.72663958212" />
+  </testsuite>
+</testsuites>
